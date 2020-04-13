@@ -36,7 +36,7 @@
             <div class="row">
               <div class="col-sm-4">
                 <h3 class="heading">IMAGE OF MARS</h3>
-                <img src= {{mars_app.feature_image_url|safe}} alt="Mars Picture">
+                <img src= {{mars_app.feature_image_url|default('static/images/error.png', true)}} alt="Mars Picture">
             </div>
 
             </div>
