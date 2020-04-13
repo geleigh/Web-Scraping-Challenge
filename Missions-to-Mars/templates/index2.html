@@ -17,26 +17,26 @@
 		  <div class="row">
 			  <div class="col-sm-4">
 				  <h3 class="heading">NEWS</h3>
-          <h3 class="heading">news_title</h3>
-          <p>news_p</p>
+          <p>{{mars_app.news_title|safe}}<p>
+          <p>{{mars_app.news_p}}</p>
       </div>
       <div class="container">
         <div class="row">
           <div class="col-sm-4">
             <h3 class="heading">WEATHER</h3>
-            <h3 class="heading">mars_weather</h3>
+            <div>{{mars_app.mars_weather}}</div>
         </div>
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
               <h3 class="heading">GENERAL INFO</h3>
-              <h3 class="heading">mars_facts</h3>
+              <div>{{mars_app.mars_facts|safe}}</div>
           </div>
           <div class="container">
             <div class="row">
               <div class="col-sm-4">
                 <h3 class="heading">IMAGE OF MARS</h3>
-                <h3 class="heading">featured_image_url</h3>
+                <img src= {{mars_app.feature_image_url|safe}} alt="Mars Picture">
             </div>
 
             </div>

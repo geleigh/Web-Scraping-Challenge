@@ -51,7 +51,7 @@ def scrape():
     image_soup = BeautifulSoup(html, "html.parser")
     # Image URL
     img_url = image_soup.select_one("figure.lede a img").get("src")
-    featured_image_url=(url + img_url)
+    featured_image_url= url + img_url
     # print(featured_image_url)
     html = requests.get("https://twitter.com/marswxreport?lang=en").text
     weather_soup = BeautifulSoup(html, "html.parser")
@@ -60,8 +60,8 @@ def scrape():
         i = 0
         for tweets in tweet:
             if "InSight" in tweet[i].text:
-                print("mars_weather = " + tweet[i].text.split("pic")[0])
-                mars_weather="mars_weather = " + tweet[i].text.split("pic")[0]
+                print("Today's forecast" + tweet[i].text.split("pic")[0])
+                mars_weather="Today's forecast" + tweet[i].text.split("pic")[0]
                 break
             i += 1
     except:
@@ -106,5 +106,7 @@ def scrape():
                 'news_p': news_p}
 
     collection.insert_one(results)
-    # results
+    
+    print(results)
 
+    return results
